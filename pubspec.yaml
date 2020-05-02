@@ -12,7 +12,8 @@ dependencies:
     sdk: flutter
   image: ^2.1.4
   meta: ^1.1.6
-  path_provider: ^1.1.0
+  path_provider: ^1.6.7
+  image_gallery_saver: ^1.2.2
 
 dev_dependencies:
   flutter_test:

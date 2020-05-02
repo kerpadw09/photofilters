@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:photofilters/filters/filters.dart';
 import 'package:image/image.dart' as imageLib;
 import 'package:path_provider/path_provider.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class PhotoFilter extends StatelessWidget {
   final imageLib.Image image;
@@ -238,6 +239,7 @@ class _PhotoFilterSelectorState extends State<PhotoFilterSelector> {
   Future<File> saveFilteredImage() async {
     var imageFile = await _localFile;
     await imageFile.writeAsBytes(cachedFilters[_filter?.name ?? "_"]);
+    await ImageGallerySaver.saveImage(cachedFilters[_filter?.name ?? "_"]);
     return imageFile;
   }
 
